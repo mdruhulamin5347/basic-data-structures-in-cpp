@@ -61,7 +61,7 @@ int main(){
     {
         int l,r; 
         cin >> l >> r;
-        long long sum=0;       
+        long long sum=0;
         if(l==1){
             sum = pre[r];
         }
