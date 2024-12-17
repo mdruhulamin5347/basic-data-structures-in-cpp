@@ -1,13 +1,12 @@
 
 
 
-
-// insert at any position in linked list
-
+// insert at tail
 
 
 #include <bits/stdc++.h>
 using namespace std;
+
 
 class Node{
     public:
@@ -20,17 +19,18 @@ class Node{
     }
 };
 
-void insert_at_anyposition(Node* temp,int idx, int val)
+void insert_at_tail(Node* &head, Node* &tail, int val)
 {
     Node* newNode = new Node(val);
-    for(int i=1; i<idx; i++)
+    if(head == NULL)
     {
-        temp = temp->next;
+        head = newNode;
+        tail = newNode;
+        return;
     }
-    newNode->next = temp->next;
-    temp->next = newNode;
+    tail->next = newNode;
+    tail = newNode; 
 }
-
 void node_data_print(Node* head)
 {
     Node* temp = head;
@@ -42,16 +42,16 @@ void node_data_print(Node* head)
 }
 
 int main(){
-    Node* head = new Node(10);
-    Node* a = new Node(20);
-    Node* b = new Node(30);
+    Node* head = new Node(30);
+    Node* a = new Node(30);
+    Node* tail = new Node(40);
 
     head->next = a;
-    a->next = b;
+    a->next = tail;
+    insert_at_tail(head,tail,100);
+    insert_at_tail(head,tail,200);
+    insert_at_tail(head,tail,300);
 
-    insert_at_anyposition(head,2,100);
-    insert_at_anyposition(head,2,200);
-    insert_at_anyposition(head,2,300);
-    node_data_print(head);    
+    node_data_print(head);
     return 0;
 }
