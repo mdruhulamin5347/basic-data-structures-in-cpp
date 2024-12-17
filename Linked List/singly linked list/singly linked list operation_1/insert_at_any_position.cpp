@@ -50,8 +50,8 @@ int main(){
     a->next = b;
 
     insert_at_anyposition(head,2,100);
-    insert_at_anyposition(head,1,200);
-    insert_at_anyposition(head,3,300);
+    insert_at_anyposition(head,2,200);
+    insert_at_anyposition(head,2,300);
     node_data_print(head);    
     return 0;
 }
