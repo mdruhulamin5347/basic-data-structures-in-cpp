@@ -45,12 +45,12 @@ void node_data_print(Node* head)
 }
 
 int main(){
-    Node* head = NULL;
-    // Node* a = new Node(30);
-    // Node* b = new Node(40);
+    Node* head = new Node(30);
+    Node* a = new Node(30);
+    Node* b = new Node(40);
 
-    // head->next = a;
-    // a->next = b;
+    head->next = a;
+    a->next = b;
     insert_at_tail(head,100);
     insert_at_tail(head,200);
     insert_at_tail(head,300);
