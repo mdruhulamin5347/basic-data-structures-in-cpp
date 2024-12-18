@@ -1,8 +1,5 @@
 
-
-
-// delete at tail 
-
+// sort linked list value
 
 
 #include <bits/stdc++.h>
@@ -32,16 +29,18 @@ void insert_at_tail(Node* &head, Node* &tail,int val)
     tail = newNode;
 }
 
-void delete_at_tail(Node* head,Node* &tail,int idx)
+void sorted_data(Node* head)
 {   
-    for(int i=1;i<idx;i++)
+    for(Node* i = head; i->next != NULL; i = i->next)
     {
-        head = head->next;
+        for(Node* j=i->next; j != NULL; j = j->next)
+        {
+            if(i->val > j->val)
+            {
+                swap(i->val,j->val);
+            }            
+        }
     }
-    Node* deleteNode = head->next;
-    head->next = head->next->next;
-    tail = head;
-    delete deleteNode;
 }
 
 void node_data_print(Node* head)
@@ -67,9 +66,7 @@ int main(){
         }
         insert_at_tail(head,tail,val);
     }
-    int idx;
-    cin >> idx;  
-    delete_at_tail(head,tail,idx);  
+    sorted_data(head);  
     node_data_print(head);
     return 0;    
 }
