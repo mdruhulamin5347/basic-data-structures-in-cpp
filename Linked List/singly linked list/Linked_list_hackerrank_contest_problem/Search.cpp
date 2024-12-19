@@ -27,77 +27,59 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node{
-    public:
+class Node {
+public:
     int val;
     Node* next;
-    Node(int val)
-    {
+    Node(int val) {
         this->val = val;
         this->next = NULL;
     }
 };
 
-void insert_at_tail(Node* &head, Node* &tail,int val)
-{
+void insert_at_tail(Node* &head, Node* &tail, int val) {
     Node* newNode = new Node(val);
-    if(head == NULL)
-    {
+    if (head == NULL) {
         head = newNode;
         tail = newNode;
-        return;
-    }
+    } 
     tail->next = newNode;
-    tail = newNode;
+    tail = newNode;   
 }
 
-void search_value(Node* head,int x)
-{   
-    int count = 0;
+int search_value(Node* head, int x) {
     int idx = 0;
-    for(Node* i = head; i != NULL; i = i->next)
-    {
-        count++;
-    }
-    for(Node* i = head; i != NULL; i = i->next)
-    {        
-        if(x == i->val){
-            break;
+    for (Node* i = head; i != NULL; i = i->next) {
+        if (i->val == x) {
+            return idx;
         }
-        idx++;     
-    }   
-    if(count <= idx)
-    {
-        cout << "-1" << endl;
+        idx++;
     }
-    else
-    {
-        cout << idx << endl;
-    }    
+    return -1; 
 }
 
-int main(){
-    
+
+
+int main() {
     int t;
     cin >> t;
-    while(t--)
-    {   
+
+    while (t--) {
         Node* head = NULL;
         Node* tail = NULL;
-        while(true)
-        {
+   
+        while (true) {
             int val;
             cin >> val;
-            if(val == -1)
-            {
+            if (val == -1) {
                 break;
             }
-            insert_at_tail(head,tail,val);
-        }
+            insert_at_tail(head, tail, val);
+        } 
         int x;
         cin >> x;
-        search_value(head,x);       
-        
+        cout << search_value(head, x) << endl;
     }
+
     return 0;
 }
