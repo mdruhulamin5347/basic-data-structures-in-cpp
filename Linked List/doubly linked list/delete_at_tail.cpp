@@ -1,6 +1,6 @@
 
 
-// implementation and doubly linkedlist printing
+// delete at tail for doubly linked list
 
 
 #include <bits/stdc++.h>
