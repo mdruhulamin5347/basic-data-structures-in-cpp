@@ -3,12 +3,6 @@
 // doubly linked list value insert at head
 
 
-
-
-
-// implementation and doubly linkedlist printing
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
