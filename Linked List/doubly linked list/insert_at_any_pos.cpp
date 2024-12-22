@@ -5,21 +5,6 @@
 
 
 
-
-// insert at tail for doubly linked list
-
-
-
-
-// doubly linked list value insert at head
-
-
-
-
-
-// implementation and doubly linkedlist printing
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
