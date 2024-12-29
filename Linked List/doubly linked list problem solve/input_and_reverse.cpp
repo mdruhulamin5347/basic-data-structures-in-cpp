@@ -1,5 +1,5 @@
 
-// input data and reverce for doubly linked list
+// input data and reverse for doubly linked list
 
 
 // Question: Take a doubly linked list as input and reverse it. After that print the linked list.
