@@ -18,6 +18,8 @@
         "bitset": "cpp",
         "chrono": "cpp",
         "algorithm": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "any": "cpp",
+        "string_view": "cpp"
     }
 }
