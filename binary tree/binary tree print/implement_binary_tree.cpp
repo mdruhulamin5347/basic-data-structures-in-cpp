@@ -21,6 +21,7 @@ class Node{
 };
 
 int main(){
+    
     Node* root  = new Node(10);
     Node* a  = new Node(20);
     Node* b  = new Node(30);
@@ -32,7 +33,7 @@ int main(){
     root->right = b;
     a->left = c;
     c->left = d;
-    b->right = e;
+    b->right = e;   
 
     return 0;
 }
