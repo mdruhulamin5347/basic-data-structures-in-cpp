@@ -74,21 +74,23 @@ Node* input_tree(){
     return root;
 }
 
-long long sum;
-long long sum_without_leaf(Node* root){
+vector<int>v;
+vector<int> reverse_leaf_node(Node* root){
     if(root == NULL)
-        return 0;
+        return v;
     if(root->left == NULL && root->right == NULL)
-        return 0;
-    sum += root->val;
-    sum_without_leaf(root->left);
-    sum_without_leaf(root->right);
-
-    return sum;
+        v.push_back(root->val);
+    reverse_leaf_node(root->left);
+    reverse_leaf_node(root->right);
+    return v;
 }
+
 int main(){
     Node* root = input_tree();
-    sum=0;
-    cout << sum_without_leaf(root);
+    vector<int>ans = reverse_leaf_node(root);
+    reverse(ans.begin(),ans.end());
+    for(int val : ans){
+        cout << val << " ";
+    }
     return 0;
 }
