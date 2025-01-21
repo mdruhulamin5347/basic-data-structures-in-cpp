@@ -16,7 +16,6 @@ void insert(vector<int> &v,int val){
             break;      
         current_idx=parent_idx;
     }    
-
 }
 
 int main(){
