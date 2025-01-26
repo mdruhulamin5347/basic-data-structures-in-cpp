@@ -18,10 +18,30 @@
 
 // Output the final list after sorting according to the question.
 
+
 #include <bits/stdc++.h>
 using namespace std;
 
+bool cmp(pair<string,int> a, pair<string,int> b) {
+    if(a.first == b.first) 
+        return a.second > b.second;    
+    return a.first < b.first;
+}
+
 int main(){
-    
+    vector<pair<string,int>>v;
+    int n,i;
+    string s;
+    cin >> n;
+    while(n--){
+        cin >> s >> i;
+        v.push_back(make_pair(s,i));
+    }
+
+    sort(v.begin(),v.end(),cmp);
+
+    for (auto val : v) {
+        cout << val.first << " " << val.second << endl;
+    }
     return 0;
 }
