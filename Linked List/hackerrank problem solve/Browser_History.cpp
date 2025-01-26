@@ -26,9 +26,7 @@
 // 1 <= |Address| <= 100; Here |Address| is the length of the string address.
 // Output Format
 
-// For each query output as asked.
-
-
+// For each query output as asked..
 
 #include <bits/stdc++.h>
 using namespace std;
