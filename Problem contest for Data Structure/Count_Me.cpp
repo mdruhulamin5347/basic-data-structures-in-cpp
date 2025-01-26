@@ -21,7 +21,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-    
+
+
+int main(){    
+    int n;
+    string s;
+    cin >> n;
+    cin.ignore();
+    while(n--){        
+        getline(cin,s);
+        stringstream ss(s);
+
+        map<string,int>m;
+        string word;
+
+        int mx = 0;
+        string mx_str;
+        while(ss >> word){
+            m[word]++;
+            if(m[word] > mx){
+                mx = m[word];
+                mx_str = word;
+            }            
+        }
+        cout << mx_str << " " << mx << endl;
+    }
     return 0;
 }
